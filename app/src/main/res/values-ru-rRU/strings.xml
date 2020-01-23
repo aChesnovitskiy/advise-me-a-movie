@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Посоветуй мне фильм!</string>
+    <string name="movie_poster">Постер к фильму</string>
+    <string name="most_popular">Популярные</string>
+    <string name="top_rated">Топ рейтинг</string>
+    <string name="add_to_favourite">Добавлено в избранное</string>
+    <string name="remove_from_favourite">Удалено из избранного</string>
+    <string name="item_main">Главная</string>
+    <string name="item_favourite">Избранное</string>
+    <string name="launch_trailer">Запустить трейлер</string>
+    <string name="movie_info_title">Название:</string>
+    <string name="movie_info_original_titile">Оригинальное название:</string>
+    <string name="movie_info_rating">Рейтинг:</string>
+    <string name="movie_info_release_date">Дата релиза:</string>
+    <string name="movie_info_overview">Описание:</string>
+    <string name="to_watch">Посмотреть</string>
+    <string name="watched">Просмотрено</string>
+    <string name="favourite">Избранное</string>
+    <string name="add_to_to_watch">Добавлено в список "Посмотреть"</string>
+    <string name="remove_from_to_watch">Удалено из списка "Посмотреть"</string>
+    <string name="add_to_watched">Добавлено в просмотренные</string>
+    <string name="remove_from_watched">Удалено из просмотренных</string>
+    <string name="trailers">Трейлеры</string>
+    <string name="information">Информация</string>
+    <string name="reviews">Обзоры</string>
+    <string name="rating">Рейтинг</string>
+    <string name="no_trailers">Нет трейлеров на русском языке</string>
+    <string name="no_reviews">Нет обзоров на русском языке</string>
+    <string name="no_movies">Нет фильмов</string>
+    <string name="filters">Фильтры</string>
+    <string name="reset">Сбросить</string>
+    <string name="apply">Применить</string>
+    <string name="hide_watched">Скрыть\nпросмотренные</string>
+    <string name="year">Год</string>
+    <string name="button_back">Кнопка назад</string>
+</resources>

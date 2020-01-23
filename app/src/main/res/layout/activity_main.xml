@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.achesnovitskiy.advisemeamovieamovie.MainActivity">
+
+    <HorizontalScrollView
+        android:id="@+id/scrollViewButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_of_top_buttons"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonPopular"
+                style="@style/TopButtons"
+                android:onClick="onClickTopButtons"
+                android:text="@string/most_popular" />
+
+            <Button
+                android:id="@+id/buttonTopRated"
+                style="@style/TopButtons"
+                android:onClick="onClickTopButtons"
+                android:text="@string/top_rated" />
+
+            <Button
+                android:id="@+id/buttonToWatch"
+                style="@style/TopButtons"
+                android:onClick="onClickTopButtons"
+                android:text="@string/to_watch" />
+
+            <Button
+                android:id="@+id/buttonWatched"
+                style="@style/TopButtons"
+                android:onClick="onClickTopButtons"
+                android:text="@string/watched" />
+
+            <Button
+                android:id="@+id/buttonFavourite"
+                style="@style/TopButtons"
+                android:onClick="onClickTopButtons"
+                android:text="@string/favourite" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewPosters"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewButtons"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ProgressBar
+        android:id="@+id/progressBarLoading"
+        android:layout_width="@dimen/size_of_progress_bar"
+        android:layout_height="@dimen/size_of_progress_bar"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollViewButtons" />
+
+    <TextView
+        android:id="@+id/textViewNoMovies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_movies"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewButtons" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_basic"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="onClickFilterButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/filter" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

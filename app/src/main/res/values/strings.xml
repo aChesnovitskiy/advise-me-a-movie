@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Advise Me a Movie!</string>
+    <string name="movie_poster">Movie poster</string>
+    <string name="most_popular">Popular</string>
+    <string name="top_rated">Top rated</string>
+    <string name="add_to_favourite">Added to favourite</string>
+    <string name="remove_from_favourite">Removed from favourite</string>
+    <string name="item_main">Main</string>
+    <string name="item_favourite">Favourite</string>
+    <string name="launch_trailer">Launch trailer</string>
+    <string name="movie_info_title">Title:</string>
+    <string name="movie_info_original_titile">Original title:</string>
+    <string name="movie_info_rating">Rating:</string>
+    <string name="movie_info_release_date">Release date:</string>
+    <string name="movie_info_overview">Overview:</string>
+    <string name="to_watch">To watch</string>
+    <string name="watched">Watched</string>
+    <string name="favourite">Favourite</string>
+    <string name="add_to_to_watch">Added to \"To watch\" list</string>
+    <string name="remove_from_to_watch">Removed from \"To watch\" list</string>
+    <string name="add_to_watched">Added to watched</string>
+    <string name="remove_from_watched">Removed from watched</string>
+    <string name="trailers">Trailers</string>
+    <string name="information">Information</string>
+    <string name="reviews">Reviews</string>
+    <string name="rating">Rating</string>
+    <string name="no_trailers">No trailers in English</string>
+    <string name="no_reviews">No reviews in English</string>
+    <string name="no_movies">No movies</string>
+    <string name="filters">Filters</string>
+    <string name="reset">Reset</string>
+    <string name="apply">Apply</string>
+    <string name="hide_watched">Hide\nwatched</string>
+    <string name="year">Year</string>
+    <string name="button_back">Button back</string>
+</resources>

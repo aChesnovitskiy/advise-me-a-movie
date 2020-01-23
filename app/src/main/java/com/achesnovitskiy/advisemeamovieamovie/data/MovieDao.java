@@ -1,0 +1,65 @@
+package com.achesnovitskiy.advisemeamovieamovie.data;
+
+/* Contains the methods used for accessing the database */
+
+import androidx.lifecycle.LiveData;
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+
+import java.util.List;
+
+@Dao
+public interface MovieDao {
+    @Query("SELECT * FROM movies")
+    LiveData<List<Movie>> getAllMovies();
+
+    @Query("SELECT * FROM favourite_movies")
+    LiveData<List<FavouriteMovie>> getAllFavouriteMovies();
+
+    @Query("SELECT * FROM to_watch_movies")
+    LiveData<List<ToWatchMovie>> getAllToWatchMovies();
+
+    @Query("SELECT * FROM watched_movies")
+    LiveData<List<WatchedMovie>> getAllWatchedMovies();
+
+    @Query("SELECT * FROM movies WHERE id == :movieId")
+    Movie getMovieById(int movieId);
+
+    @Query("SELECT * FROM favourite_movies WHERE id == :movieId")
+    FavouriteMovie getFavouriteMovieById(int movieId);
+
+    @Query("SELECT * FROM to_watch_movies WHERE id == :movieId")
+    ToWatchMovie getToWatchMovieById(int movieId);
+
+    @Query("SELECT * FROM watched_movies WHERE id == :movieId")
+    WatchedMovie getWatchedMovieById(int movieId);
+
+    @Query("DELETE FROM movies")
+    void deleteAllMovies();
+
+    @Insert
+    void insertMovie(Movie movie);
+
+    @Delete
+    void deleteMovie(Movie movie);
+
+    @Insert
+    void insertFavouriteMovie(FavouriteMovie movie);
+
+    @Delete
+    void deleteFavouriteMovie(FavouriteMovie movie);
+
+    @Insert
+    void insertToWatchMovie(ToWatchMovie movie);
+
+    @Delete
+    void deleteToWatchMovie(ToWatchMovie movie);
+
+    @Insert
+    void insertWatchedMovie(WatchedMovie movie);
+
+    @Delete
+    void deleteWatchedMovie(WatchedMovie movie);
+}

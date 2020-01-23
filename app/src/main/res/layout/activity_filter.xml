@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.achesnovitskiy.advisemeamovieamovie.FilterActivity">
+
+    <TextView
+        android:id="@+id/textViewFilters"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_of_top_buttons"
+        android:textStyle="bold"
+        android:textColor="@color/white_color"
+        android:background="@color/blue_color"
+        android:gravity="center"
+        android:text="@string/filters"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewFilterRating"
+        style="@style/DetailTextLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_big"
+        android:text="@string/rating"
+        android:gravity="end"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerRatingMin"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineFilter"
+        app:layout_constraintTop_toTopOf="@+id/spinnerRatingMin" />
+
+    <TextView
+        android:id="@+id/textViewFilterYear"
+        style="@style/DetailTextLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_big"
+        android:text="@string/year"
+        android:gravity="end"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerYearMin"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineFilter"
+        app:layout_constraintTop_toTopOf="@+id/spinnerYearMin" />
+
+    <TextView
+        android:id="@+id/textViewHideWatched"
+        style="@style/DetailTextLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_big"
+        android:text="@string/hide_watched"
+        android:gravity="end"
+        app:layout_constraintBottom_toBottomOf="@+id/switchHideWatched"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineFilter"
+        app:layout_constraintTop_toTopOf="@+id/switchHideWatched" />
+
+    <Spinner
+        android:id="@+id/spinnerRatingMin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_very_big"
+        android:background="@color/white_color"
+        android:minWidth="@dimen/spinner_min_width"
+        android:minHeight="@dimen/spinner_min_height"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerYearMin"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerYearMin"
+        app:layout_constraintStart_toStartOf="@+id/spinnerYearMin" />
+
+    <Spinner
+        android:id="@+id/spinnerRatingMax"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white_color"
+        android:minWidth="@dimen/spinner_min_width"
+        android:minHeight="@dimen/spinner_min_height"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerRatingMin"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerYearMax"
+        app:layout_constraintStart_toStartOf="@+id/spinnerYearMax"
+        app:layout_constraintTop_toTopOf="@+id/spinnerRatingMin" />
+
+    <Spinner
+        android:id="@+id/spinnerYearMin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_big"
+        android:spinnerMode="dialog"
+        android:minWidth="@dimen/spinner_min_width"
+        android:minHeight="@dimen/spinner_min_height"
+        android:background="@color/white_color"
+        app:layout_constraintBottom_toTopOf="@+id/buttonApply"
+        app:layout_constraintStart_toStartOf="@+id/guidelineFilter"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFilters" />
+
+    <Spinner
+        android:id="@+id/spinnerYearMax"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        android:minWidth="@dimen/spinner_min_width"
+        android:minHeight="@dimen/spinner_min_height"
+        android:background="@color/white_color"
+        android:layout_margin="@dimen/margin_little"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerYearMin"
+        app:layout_constraintStart_toEndOf="@+id/textViewDashYear"
+        app:layout_constraintTop_toTopOf="@+id/spinnerYearMin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <Switch
+        android:id="@+id/switchHideWatched"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_very_big"
+        android:layout_marginLeft="@dimen/margin_big"
+        android:layout_marginStart="@dimen/margin_big"
+        android:layout_marginEnd="@dimen/margin_big"
+        android:layout_marginRight="@dimen/margin_big"
+        app:layout_constraintStart_toStartOf="@+id/guidelineFilter"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerYearMin" />
+
+    <TextView
+        android:id="@+id/textViewDashRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="–"
+        android:textColor="@color/blue_color"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/margin_little"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerRatingMin"
+        app:layout_constraintStart_toEndOf="@+id/spinnerRatingMin"
+        app:layout_constraintTop_toTopOf="@+id/spinnerRatingMin" />
+
+    <TextView
+        android:id="@+id/textViewDashYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="–"
+        android:textColor="@color/blue_color"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/margin_little"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerYearMin"
+        app:layout_constraintStart_toEndOf="@+id/spinnerYearMin"
+        app:layout_constraintTop_toTopOf="@+id/spinnerYearMin" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_of_top_buttons"
+        android:text="@string/reset"
+        android:layout_margin="@dimen/margin_basic"
+        android:textColor="@color/white_color"
+        android:background="@drawable/button"
+        android:onClick="onClickFilterButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/buttonApply"/>
+
+    <Button
+        android:id="@+id/buttonApply"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_of_top_buttons"
+        android:text="@string/apply"
+        android:layout_margin="@dimen/margin_basic"
+        android:textColor="@color/white_color"
+        android:background="@drawable/button"
+        android:onClick="onClickFilterButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonReset" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_of_star">20dp</dimen>
+    <dimen name="size_of_back">32dp</dimen>
+    <dimen name="size_of_rating_star">42dp</dimen>
+    <dimen name="margin_basic">8dp</dimen>
+    <dimen name="margin_little">4dp</dimen>
+    <dimen name="margin_big">16dp</dimen>
+    <dimen name="margin_very_big">32dp</dimen>
+    <dimen name="size_of_play">42dp</dimen>
+    <dimen name="size_of_progress_bar">42dp</dimen>
+    <dimen name="height_of_top_buttons">42dp</dimen>
+    <dimen name="margin_left">2dp</dimen>
+    <dimen name="margin_right">8dp</dimen>
+    <dimen name="rating_on_the_star_size">16sp</dimen>
+    <dimen name="spinner_min_width">48dp</dimen>
+    <dimen name="spinner_min_height">24dp</dimen>
+</resources>

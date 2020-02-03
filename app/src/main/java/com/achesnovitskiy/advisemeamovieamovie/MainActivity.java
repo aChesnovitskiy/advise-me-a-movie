@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +47,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private Button buttonToWatch;
     private Button buttonWatched;
     private Button buttonFavourite;
+    private ImageView toWatchIconBlue;
+    private ImageView toWatchIconWhite;
+    private ImageView watchedIconBlue;
+    private ImageView watchedIconWhite;
+    private ImageView favouriteIconBlue;
+    private ImageView favouriteIconWhite;
+    private ImageView circleFilterOn;
     private FloatingActionButton floatingActionButtonFilter;
     private TextView textViewNoMovies;
     private ProgressBar progressBarLoading;
@@ -96,6 +104,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         floatingActionButtonFilter = findViewById(R.id.floatingActionButtonFilter);
         textViewNoMovies = findViewById(R.id.textViewNoMovies);
         progressBarLoading = findViewById(R.id.progressBarLoading);
+        toWatchIconBlue = findViewById(R.id.toWatchIconBlue);
+        toWatchIconWhite = findViewById(R.id.toWatchIconWhite);
+        watchedIconBlue = findViewById(R.id.watchedIconBlue);
+        watchedIconWhite = findViewById(R.id.watchedIconWhite);
+        favouriteIconBlue = findViewById(R.id.favouriteIconBlue);
+        favouriteIconWhite = findViewById(R.id.favouriteIconWhite);
+        circleFilterOn = findViewById(R.id.circleFilterOn);
 
         lang = Locale.getDefault().getLanguage(); // Set default language
 
@@ -215,6 +230,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                     yearMax = data.getIntExtra("yearMax", YEAR_MAX_DEFAULT);
                     isHideWatched = data.getBooleanExtra("isHideWatched", false);
 
+                    if (ratingMin != RATING_MIN_DEFAULT || ratingMax != RATING_MAX_DEFAULT ||
+                            yearMin != YEAR_MIN_DEFAULT || yearMax != YEAR_MAX_DEFAULT || isHideWatched) {
+                        circleFilterOn.setVisibility(View.VISIBLE);
+                    } else {
+                        circleFilterOn.setVisibility(View.GONE);
+                    }
+
                     switch (activeButton) {
                         case ACTIVE_BUTTON_POPULAR_OR_TOP_RATED:
                             page = 1;
@@ -291,6 +313,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     /* Click on "to watch" button */
     private void clickToWatchButton() {
+        Toast.makeText(this, getString(R.string.movies_to_watch), Toast.LENGTH_SHORT).show();
         setMyCollectionMovies(toWatchMovies);
         activeButton = ACTIVE_BUTTON_TO_WATCH;
         setButtonsStyle(R.id.buttonToWatch);
@@ -298,6 +321,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     /* Click on "watched" button */
     private void clickWatchedButton() {
+        Toast.makeText(this, getString(R.string.watched_movies), Toast.LENGTH_SHORT).show();
         setMyCollectionMovies(watchedMovies);
         activeButton = ACTIVE_BUTTON_WATCHED;
         setButtonsStyle(R.id.buttonWatched);
@@ -305,6 +329,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     /* Click on "favourite" button */
     private void clickFavouriteButton() {
+        Toast.makeText(this, getString(R.string.favourite_movies), Toast.LENGTH_SHORT).show();
         setMyCollectionMovies(favouriteMovies);
         activeButton = ACTIVE_BUTTON_FAVOURITE;
         setButtonsStyle(R.id.buttonFavourite);
@@ -353,60 +378,75 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 buttonPopular.setBackgroundColor(blue);
                 buttonTopRated.setTextColor(blue);
                 buttonTopRated.setBackgroundColor(white);
-                buttonToWatch.setTextColor(blue);
                 buttonToWatch.setBackgroundColor(white);
-                buttonWatched.setTextColor(blue);
                 buttonWatched.setBackgroundColor(white);
-                buttonFavourite.setTextColor(blue);
                 buttonFavourite.setBackgroundColor(white);
+                toWatchIconBlue.setVisibility(View.VISIBLE);
+                toWatchIconWhite.setVisibility(View.GONE);
+                watchedIconBlue.setVisibility(View.VISIBLE);
+                watchedIconWhite.setVisibility(View.GONE);
+                favouriteIconBlue.setVisibility(View.VISIBLE);
+                favouriteIconWhite.setVisibility(View.GONE);
                 break;
             case R.id.buttonTopRated:
                 buttonPopular.setTextColor(blue);
                 buttonPopular.setBackgroundColor(white);
                 buttonTopRated.setTextColor(white);
                 buttonTopRated.setBackgroundColor(blue);
-                buttonToWatch.setTextColor(blue);
                 buttonToWatch.setBackgroundColor(white);
-                buttonWatched.setTextColor(blue);
                 buttonWatched.setBackgroundColor(white);
-                buttonFavourite.setTextColor(blue);
                 buttonFavourite.setBackgroundColor(white);
+                toWatchIconBlue.setVisibility(View.VISIBLE);
+                toWatchIconWhite.setVisibility(View.GONE);
+                watchedIconBlue.setVisibility(View.VISIBLE);
+                watchedIconWhite.setVisibility(View.GONE);
+                favouriteIconBlue.setVisibility(View.VISIBLE);
+                favouriteIconWhite.setVisibility(View.GONE);
                 break;
             case R.id.buttonToWatch:
                 buttonPopular.setTextColor(blue);
                 buttonPopular.setBackgroundColor(white);
                 buttonTopRated.setTextColor(blue);
                 buttonTopRated.setBackgroundColor(white);
-                buttonToWatch.setTextColor(white);
                 buttonToWatch.setBackgroundColor(blue);
-                buttonWatched.setTextColor(blue);
                 buttonWatched.setBackgroundColor(white);
-                buttonFavourite.setTextColor(blue);
                 buttonFavourite.setBackgroundColor(white);
+                toWatchIconBlue.setVisibility(View.GONE);
+                toWatchIconWhite.setVisibility(View.VISIBLE);
+                watchedIconBlue.setVisibility(View.VISIBLE);
+                watchedIconWhite.setVisibility(View.GONE);
+                favouriteIconBlue.setVisibility(View.VISIBLE);
+                favouriteIconWhite.setVisibility(View.GONE);
                 break;
             case R.id.buttonWatched:
                 buttonPopular.setTextColor(blue);
                 buttonPopular.setBackgroundColor(white);
                 buttonTopRated.setTextColor(blue);
                 buttonTopRated.setBackgroundColor(white);
-                buttonToWatch.setTextColor(blue);
                 buttonToWatch.setBackgroundColor(white);
-                buttonWatched.setTextColor(white);
                 buttonWatched.setBackgroundColor(blue);
-                buttonFavourite.setTextColor(blue);
                 buttonFavourite.setBackgroundColor(white);
+                toWatchIconBlue.setVisibility(View.VISIBLE);
+                toWatchIconWhite.setVisibility(View.GONE);
+                watchedIconBlue.setVisibility(View.GONE);
+                watchedIconWhite.setVisibility(View.VISIBLE);
+                favouriteIconBlue.setVisibility(View.VISIBLE);
+                favouriteIconWhite.setVisibility(View.GONE);
                 break;
             case R.id.buttonFavourite:
                 buttonPopular.setTextColor(blue);
                 buttonPopular.setBackgroundColor(white);
                 buttonTopRated.setTextColor(blue);
                 buttonTopRated.setBackgroundColor(white);
-                buttonToWatch.setTextColor(blue);
                 buttonToWatch.setBackgroundColor(white);
-                buttonWatched.setTextColor(blue);
                 buttonWatched.setBackgroundColor(white);
-                buttonFavourite.setTextColor(white);
                 buttonFavourite.setBackgroundColor(blue);
+                toWatchIconBlue.setVisibility(View.VISIBLE);
+                toWatchIconWhite.setVisibility(View.GONE);
+                watchedIconBlue.setVisibility(View.VISIBLE);
+                watchedIconWhite.setVisibility(View.GONE);
+                favouriteIconBlue.setVisibility(View.GONE);
+                favouriteIconWhite.setVisibility(View.VISIBLE);
                 break;
         }
     }
@@ -457,7 +497,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         loaderManager.destroyLoader(LOADER_ID); // Stops and removes the loader with the given ID
     }
 
-    @Override // Called when a previously created loader is being reset, and thus making its data unavailable
+    @Override
+    // Called when a previously created loader is being reset, and thus making its data unavailable
     public void onLoaderReset(@NonNull Loader<JSONObject> loader) {
 
     }

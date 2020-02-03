@@ -33,4 +33,7 @@
     <string name="hide_watched">Hide\nwatched</string>
     <string name="year">Year</string>
     <string name="button_back">Button back</string>
+    <string name="movies_to_watch">Movies to watch</string>
+    <string name="watched_movies">Watched movies</string>
+    <string name="favourite_movies">Favourite movies</string>
 </resources>

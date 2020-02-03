@@ -7,53 +7,121 @@
     android:background="@color/colorPrimary"
     tools:context="com.achesnovitskiy.advisemeamovieamovie.MainActivity">
 
-    <HorizontalScrollView
-        android:id="@+id/scrollViewButtons"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:layout_constraintEnd_toEndOf="parent"
+    <Button
+        android:id="@+id/buttonPopular"
+        style="@style/TopButtons"
+        android:onClick="onClickTopButtons"
+        android:text="@string/most_popular"
+        app:layout_constraintEnd_toStartOf="@+id/buttonTopRated"
+        app:layout_constraintHorizontal_weight="3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/height_of_top_buttons"
-            android:orientation="horizontal">
+    <Button
+        android:id="@+id/buttonTopRated"
+        style="@style/TopButtons"
+        android:onClick="onClickTopButtons"
+        android:text="@string/top_rated"
+        app:layout_constraintEnd_toStartOf="@+id/buttonToWatch"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintStart_toEndOf="@+id/buttonPopular"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/buttonPopular"
-                style="@style/TopButtons"
-                android:onClick="onClickTopButtons"
-                android:text="@string/most_popular" />
+    <Button
+        android:id="@+id/buttonToWatch"
+        style="@style/TopButtons"
+        android:onClick="onClickTopButtons"
+        app:layout_constraintEnd_toStartOf="@+id/buttonWatched"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/buttonTopRated"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/buttonTopRated"
-                style="@style/TopButtons"
-                android:onClick="onClickTopButtons"
-                android:text="@string/top_rated" />
+    <ImageView
+        android:id="@+id/toWatchIconBlue"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonToWatch"
+        app:layout_constraintEnd_toEndOf="@+id/buttonToWatch"
+        app:layout_constraintStart_toStartOf="@+id/buttonToWatch"
+        app:layout_constraintTop_toTopOf="@+id/buttonToWatch"
+        app:srcCompat="@drawable/play_blue" />
 
-            <Button
-                android:id="@+id/buttonToWatch"
-                style="@style/TopButtons"
-                android:onClick="onClickTopButtons"
-                android:text="@string/to_watch" />
+    <ImageView
+        android:id="@+id/toWatchIconWhite"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonToWatch"
+        app:layout_constraintEnd_toEndOf="@+id/buttonToWatch"
+        app:layout_constraintStart_toStartOf="@+id/buttonToWatch"
+        app:layout_constraintTop_toTopOf="@+id/buttonToWatch"
+        app:srcCompat="@drawable/play_white"
+        android:visibility="gone"/>
 
-            <Button
-                android:id="@+id/buttonWatched"
-                style="@style/TopButtons"
-                android:onClick="onClickTopButtons"
-                android:text="@string/watched" />
+    <Button
+        android:id="@+id/buttonWatched"
+        style="@style/TopButtons"
+        android:onClick="onClickTopButtons"
+        app:layout_constraintEnd_toStartOf="@+id/buttonFavourite"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/buttonToWatch"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/buttonFavourite"
-                style="@style/TopButtons"
-                android:onClick="onClickTopButtons"
-                android:text="@string/favourite" />
+    <ImageView
+        android:id="@+id/watchedIconBlue"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonWatched"
+        app:layout_constraintEnd_toEndOf="@+id/buttonWatched"
+        app:layout_constraintStart_toStartOf="@+id/buttonWatched"
+        app:layout_constraintTop_toTopOf="@+id/buttonWatched"
+        app:srcCompat="@drawable/check_blue" />
 
-        </LinearLayout>
+    <ImageView
+        android:id="@+id/watchedIconWhite"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonWatched"
+        app:layout_constraintEnd_toEndOf="@+id/buttonWatched"
+        app:layout_constraintStart_toStartOf="@+id/buttonWatched"
+        app:layout_constraintTop_toTopOf="@+id/buttonWatched"
+        app:srcCompat="@drawable/check_white"
+        android:visibility="gone" />
 
-    </HorizontalScrollView>
+    <Button
+        android:id="@+id/buttonFavourite"
+        style="@style/TopButtons"
+        android:onClick="onClickTopButtons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/buttonWatched"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/favouriteIconBlue"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonFavourite"
+        app:layout_constraintEnd_toEndOf="@+id/buttonFavourite"
+        app:layout_constraintStart_toStartOf="@+id/buttonFavourite"
+        app:layout_constraintTop_toTopOf="@+id/buttonFavourite"
+        app:srcCompat="@drawable/star_blue" />
+
+    <ImageView
+        android:id="@+id/favouriteIconWhite"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonFavourite"
+        app:layout_constraintEnd_toEndOf="@+id/buttonFavourite"
+        app:layout_constraintStart_toStartOf="@+id/buttonFavourite"
+        app:layout_constraintTop_toTopOf="@+id/buttonFavourite"
+        app:srcCompat="@drawable/star_white"
+        android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleViewPosters"
@@ -63,7 +131,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollViewButtons"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPopular"
         app:layout_constraintVertical_bias="0.0" />
 
     <ProgressBar
@@ -74,7 +142,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scrollViewButtons" />
+        app:layout_constraintTop_toBottomOf="@id/buttonPopular" />
 
     <TextView
         android:id="@+id/textViewNoMovies"
@@ -85,7 +153,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollViewButtons" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonPopular" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButtonFilter"
@@ -98,5 +166,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/filter" />
+
+    <ImageView
+        android:id="@+id/circleFilterOn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/circle_filter_on"
+        android:elevation="7dp"
+        app:layout_constraintEnd_toEndOf="@+id/floatingActionButtonFilter"
+        app:layout_constraintTop_toTopOf="@+id/floatingActionButtonFilter"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -46,13 +46,15 @@
     <TextView
         android:id="@+id/textViewHideWatched"
         style="@style/DetailTextLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_big"
-        android:text="@string/hide_watched"
         android:gravity="end"
+        android:text="@string/hide_watched"
         app:layout_constraintBottom_toBottomOf="@+id/switchHideWatched"
         app:layout_constraintEnd_toStartOf="@+id/guidelineFilter"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/switchHideWatched" />
 
     <Spinner

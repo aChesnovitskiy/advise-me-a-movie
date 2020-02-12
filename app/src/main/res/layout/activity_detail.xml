@@ -32,39 +32,24 @@
                 style="@style/TopButtonsDetail"
                 android:contentDescription="@string/to_watch"
                 android:onClick="onClickChangeToWatch"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/play_grey" />
-
-            <TextView
-                android:id="@+id/textViewAddToToWatch"
-                style="@style/TopTextDetail"
-                android:onClick="onClickChangeToWatch"
-                android:text="@string/to_watch" />
 
             <ImageView
                 android:id="@+id/imageViewAddToWatched"
                 style="@style/TopButtonsDetail"
                 android:contentDescription="@string/watched"
                 android:onClick="onClickChangeWatched"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/check_grey" />
-
-            <TextView
-                android:id="@+id/textViewAddToWatched"
-                style="@style/TopTextDetail"
-                android:onClick="onClickChangeWatched"
-                android:text="@string/watched" />
 
             <ImageView
                 android:id="@+id/imageViewAddToFavourite"
                 style="@style/TopButtonsDetail"
                 android:contentDescription="@string/favourite"
                 android:onClick="onClickChangeFavourite"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/star_grey" />
-
-            <TextView
-                android:id="@+id/textViewAddToFavourite"
-                style="@style/TopTextDetail"
-                android:onClick="onClickChangeFavourite"
-                android:text="@string/favourite" />
 
         </LinearLayout>
 

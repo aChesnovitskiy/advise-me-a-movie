@@ -83,9 +83,6 @@ public class DetailActivity extends AppCompatActivity {
         textViewRating = findViewById(R.id.textViewRating);
         textViewReleaseDate = findViewById(R.id.textViewReleaseDate);
         textViewOverview = findViewById(R.id.textViewOverview);
-        textViewAddToToWatch = findViewById(R.id.textViewAddToToWatch);
-        textViewAddToWatched = findViewById(R.id.textViewAddToWatched);
-        textViewAddToFavourite = findViewById(R.id.textViewAddToFavourite);
         scrollViewInfo = findViewById(R.id.scrollViewInfo);
 
         lang = Locale.getDefault().getLanguage(); // Set default language
@@ -176,10 +173,8 @@ public class DetailActivity extends AppCompatActivity {
         favouriteMovie = viewModel.getFavouriteMovieById(id);
         if (favouriteMovie == null) {
             imageViewAddToFavourite.setImageResource(R.drawable.star_grey);
-            textViewAddToFavourite.setTextColor(getResources().getColor(R.color.grey_color));
         } else {
             imageViewAddToFavourite.setImageResource(R.drawable.star_blue);
-            textViewAddToFavourite.setTextColor(getResources().getColor(R.color.blue_color));
         }
     }
 
@@ -200,10 +195,8 @@ public class DetailActivity extends AppCompatActivity {
         toWatchMovie = viewModel.getToWatchMovieById(id);
         if (toWatchMovie == null) {
             imageViewAddToToWatch.setImageResource(R.drawable.play_grey);
-            textViewAddToToWatch.setTextColor(getResources().getColor(R.color.grey_color));
         } else {
             imageViewAddToToWatch.setImageResource(R.drawable.play_blue);
-            textViewAddToToWatch.setTextColor(getResources().getColor(R.color.blue_color));
         }
     }
 
@@ -224,10 +217,8 @@ public class DetailActivity extends AppCompatActivity {
         watchedMovie = viewModel.getWatchedMovieById(id);
         if (watchedMovie == null) {
             imageViewAddToWatched.setImageResource(R.drawable.check_grey);
-            textViewAddToWatched.setTextColor(getResources().getColor(R.color.grey_color));
         } else {
             imageViewAddToWatched.setImageResource(R.drawable.check_blue);
-            textViewAddToWatched.setTextColor(getResources().getColor(R.color.blue_color));
         }
     }
 

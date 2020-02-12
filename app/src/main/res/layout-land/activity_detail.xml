@@ -33,7 +33,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutTop"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="@dimen/height_of_top_buttons"
         android:gravity="center_horizontal"
         app:layout_constraintStart_toEndOf="@id/ButtonBackDetail"
@@ -45,39 +45,24 @@
             android:id="@+id/imageViewAddToToWatch"
             android:contentDescription="@string/to_watch"
             android:onClick="onClickChangeToWatch"
+            android:layout_weight="1"
             app:srcCompat="@drawable/play_grey" />
-
-        <TextView
-            style="@style/TopTextDetail"
-            android:id="@+id/textViewAddToToWatch"
-            android:onClick="onClickChangeToWatch"
-            android:text="@string/to_watch"/>
 
         <ImageView
             style="@style/TopButtonsDetail"
             android:id="@+id/imageViewAddToWatched"
             android:contentDescription="@string/watched"
             android:onClick="onClickChangeWatched"
+            android:layout_weight="1"
             app:srcCompat="@drawable/check_grey" />
-
-        <TextView
-            style="@style/TopTextDetail"
-            android:id="@+id/textViewAddToWatched"
-            android:onClick="onClickChangeWatched"
-            android:text="@string/watched"/>
 
         <ImageView
             style="@style/TopButtonsDetail"
             android:id="@+id/imageViewAddToFavourite"
             android:contentDescription="@string/favourite"
             android:onClick="onClickChangeFavourite"
+            android:layout_weight="1"
             app:srcCompat="@drawable/star_grey" />
-
-        <TextView
-            style="@style/TopTextDetail"
-            android:id="@+id/textViewAddToFavourite"
-            android:onClick="onClickChangeFavourite"
-            android:text="@string/favourite"/>
 
     </LinearLayout>
 

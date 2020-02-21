@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.achesnovitskiy.advisemeamovie"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -44,7 +44,7 @@ dependencies {
     // optional - Test helpers for LiveData
     testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
 
-    def room_version = "2.2.3"
+    def room_version = "2.2.4"
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
@@ -62,5 +62,9 @@ dependencies {
     // Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+
+    implementation 'com.android.support:appcompat-v7:29.0.0' // appcompat library
+    implementation 'com.android.support:design:29.0.0'
+
 }

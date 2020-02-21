@@ -17,8 +17,8 @@
     <string name="to_watch">Посмотреть</string>
     <string name="watched">Просмотрено</string>
     <string name="favourite">Избранное</string>
-    <string name="add_to_to_watch">Добавлено в список "Посмотреть"</string>
-    <string name="remove_from_to_watch">Удалено из списка "Посмотреть"</string>
+    <string name="add_to_to_watch">Добавлено в список к просмотру</string>
+    <string name="remove_from_to_watch">Удалено из списка к просмотру</string>
     <string name="add_to_watched">Добавлено в просмотренные</string>
     <string name="remove_from_watched">Удалено из просмотренных</string>
     <string name="trailers">Трейлеры</string>
@@ -34,7 +34,7 @@
     <string name="hide_watched">Скрыть\nпросмотренные</string>
     <string name="year">Год</string>
     <string name="button_back">Кнопка назад</string>
-    <string name="movies_to_watch">Фильмы к просмотру</string>
-    <string name="watched_movies">Просмотренные фильмы</string>
-    <string name="favourite_movies">Избранные фильмы</string>
+    <string name="movies_to_watch">К просмотру</string>
+    <string name="watched_movies">Просмотренные</string>
+    <string name="favourite_movies">Избранные</string>
 </resources>

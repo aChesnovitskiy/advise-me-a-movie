@@ -11,25 +11,57 @@
         android:id="@+id/buttonPopular"
         style="@style/TopButtons"
         android:onClick="onClickTopButtons"
-        android:text="@string/most_popular"
-        android:autoSizeTextType="uniform"
-        android:autoSizeMaxTextSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/buttonTopRated"
-        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintHorizontal_weight="2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/popularIconBlue"
+        style="@style/TopButtonsIcons"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonPopular"
+        app:layout_constraintEnd_toEndOf="@+id/buttonPopular"
+        app:layout_constraintStart_toStartOf="@+id/buttonPopular"
+        app:layout_constraintTop_toTopOf="@+id/buttonPopular"
+        app:srcCompat="@drawable/ic_whatshot_blue_24dp" />
+
+    <ImageView
+        android:id="@+id/popularIconWhite"
+        style="@style/TopButtonsIcons"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonPopular"
+        app:layout_constraintEnd_toEndOf="@+id/buttonPopular"
+        app:layout_constraintStart_toStartOf="@+id/buttonPopular"
+        app:layout_constraintTop_toTopOf="@+id/buttonPopular"
+        app:srcCompat="@drawable/ic_whatshot_white_24dp"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/buttonTopRated"
         style="@style/TopButtons"
         android:onClick="onClickTopButtons"
-        android:text="@string/top_rated"
-        android:autoSizeTextType="uniform"
-        android:autoSizeMaxTextSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/buttonToWatch"
-        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintHorizontal_weight="2"
         app:layout_constraintStart_toEndOf="@+id/buttonPopular"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/topRatedIconBlue"
+        style="@style/TopButtonsIcons"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonTopRated"
+        app:layout_constraintEnd_toEndOf="@+id/buttonTopRated"
+        app:layout_constraintStart_toStartOf="@+id/buttonTopRated"
+        app:layout_constraintTop_toTopOf="@+id/buttonTopRated"
+        app:srcCompat="@drawable/ic_star_blue_24dp" />
+
+    <ImageView
+        android:id="@+id/topRatedIconWhite"
+        style="@style/TopButtonsIcons"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonTopRated"
+        app:layout_constraintEnd_toEndOf="@+id/buttonTopRated"
+        app:layout_constraintStart_toStartOf="@+id/buttonTopRated"
+        app:layout_constraintTop_toTopOf="@+id/buttonTopRated"
+        app:srcCompat="@drawable/ic_star_white_24dp"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/buttonToWatch"
@@ -42,25 +74,21 @@
 
     <ImageView
         android:id="@+id/toWatchIconBlue"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:elevation="7dp"
+        style="@style/TopButtonsIcons"
         app:layout_constraintBottom_toBottomOf="@+id/buttonToWatch"
         app:layout_constraintEnd_toEndOf="@+id/buttonToWatch"
         app:layout_constraintStart_toStartOf="@+id/buttonToWatch"
         app:layout_constraintTop_toTopOf="@+id/buttonToWatch"
-        app:srcCompat="@drawable/play_blue" />
+        app:srcCompat="@drawable/ic_play_arrow_blue_24dp" />
 
     <ImageView
         android:id="@+id/toWatchIconWhite"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:elevation="7dp"
+        style="@style/TopButtonsIcons"
         app:layout_constraintBottom_toBottomOf="@+id/buttonToWatch"
         app:layout_constraintEnd_toEndOf="@+id/buttonToWatch"
         app:layout_constraintStart_toStartOf="@+id/buttonToWatch"
         app:layout_constraintTop_toTopOf="@+id/buttonToWatch"
-        app:srcCompat="@drawable/play_white"
+        app:srcCompat="@drawable/ic_play_arrow_white_24dp"
         android:visibility="gone"/>
 
     <Button
@@ -74,25 +102,21 @@
 
     <ImageView
         android:id="@+id/watchedIconBlue"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:elevation="7dp"
+        style="@style/TopButtonsIcons"
         app:layout_constraintBottom_toBottomOf="@+id/buttonWatched"
         app:layout_constraintEnd_toEndOf="@+id/buttonWatched"
         app:layout_constraintStart_toStartOf="@+id/buttonWatched"
         app:layout_constraintTop_toTopOf="@+id/buttonWatched"
-        app:srcCompat="@drawable/check_blue" />
+        app:srcCompat="@drawable/ic_done_blue_24dp" />
 
     <ImageView
         android:id="@+id/watchedIconWhite"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:elevation="7dp"
+        style="@style/TopButtonsIcons"
         app:layout_constraintBottom_toBottomOf="@+id/buttonWatched"
         app:layout_constraintEnd_toEndOf="@+id/buttonWatched"
         app:layout_constraintStart_toStartOf="@+id/buttonWatched"
         app:layout_constraintTop_toTopOf="@+id/buttonWatched"
-        app:srcCompat="@drawable/check_white"
+        app:srcCompat="@drawable/ic_done_white_24dp"
         android:visibility="gone" />
 
     <Button
@@ -106,25 +130,21 @@
 
     <ImageView
         android:id="@+id/favouriteIconBlue"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:elevation="7dp"
+        style="@style/TopButtonsIcons"
         app:layout_constraintBottom_toBottomOf="@+id/buttonFavourite"
         app:layout_constraintEnd_toEndOf="@+id/buttonFavourite"
         app:layout_constraintStart_toStartOf="@+id/buttonFavourite"
         app:layout_constraintTop_toTopOf="@+id/buttonFavourite"
-        app:srcCompat="@drawable/star_blue" />
+        app:srcCompat="@drawable/ic_favorite_blue_24dp" />
 
     <ImageView
         android:id="@+id/favouriteIconWhite"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:elevation="7dp"
+        style="@style/TopButtonsIcons"
         app:layout_constraintBottom_toBottomOf="@+id/buttonFavourite"
         app:layout_constraintEnd_toEndOf="@+id/buttonFavourite"
         app:layout_constraintStart_toStartOf="@+id/buttonFavourite"
         app:layout_constraintTop_toTopOf="@+id/buttonFavourite"
-        app:srcCompat="@drawable/star_white"
+        app:srcCompat="@drawable/ic_favorite_white_24dp"
         android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -169,7 +189,7 @@
         android:onClick="onClickFilterButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/filter" />
+        app:srcCompat="@drawable/ic_filter" />
 
     <ImageView
         android:id="@+id/circleFilterOn"

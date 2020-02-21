@@ -172,9 +172,9 @@ public class DetailActivity extends AppCompatActivity {
     private void setFavourite() {
         favouriteMovie = viewModel.getFavouriteMovieById(id);
         if (favouriteMovie == null) {
-            imageViewAddToFavourite.setImageResource(R.drawable.star_grey);
+            imageViewAddToFavourite.setImageResource(R.drawable.ic_favorite_gray_24dp);
         } else {
-            imageViewAddToFavourite.setImageResource(R.drawable.star_blue);
+            imageViewAddToFavourite.setImageResource(R.drawable.ic_favorite_blue_24dp);
         }
     }
 
@@ -194,9 +194,9 @@ public class DetailActivity extends AppCompatActivity {
     private void setToWatch() {
         toWatchMovie = viewModel.getToWatchMovieById(id);
         if (toWatchMovie == null) {
-            imageViewAddToToWatch.setImageResource(R.drawable.play_grey);
+            imageViewAddToToWatch.setImageResource(R.drawable.ic_play_arrow_gray_24dp);
         } else {
-            imageViewAddToToWatch.setImageResource(R.drawable.play_blue);
+            imageViewAddToToWatch.setImageResource(R.drawable.ic_play_arrow_blue_24dp);
         }
     }
 
@@ -216,9 +216,9 @@ public class DetailActivity extends AppCompatActivity {
     private void setWatched() {
         watchedMovie = viewModel.getWatchedMovieById(id);
         if (watchedMovie == null) {
-            imageViewAddToWatched.setImageResource(R.drawable.check_grey);
+            imageViewAddToWatched.setImageResource(R.drawable.ic_done_gray_24dp);
         } else {
-            imageViewAddToWatched.setImageResource(R.drawable.check_blue);
+            imageViewAddToWatched.setImageResource(R.drawable.ic_done_blue_24dp);
         }
     }
 

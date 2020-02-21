@@ -47,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private Button buttonToWatch;
     private Button buttonWatched;
     private Button buttonFavourite;
+    private ImageView popularIconBlue;
+    private ImageView popularIconWhite;
+    private ImageView topRatedIconBlue;
+    private ImageView topRatedIconWhite;
     private ImageView toWatchIconBlue;
     private ImageView toWatchIconWhite;
     private ImageView watchedIconBlue;
@@ -104,6 +108,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         floatingActionButtonFilter = findViewById(R.id.floatingActionButtonFilter);
         textViewNoMovies = findViewById(R.id.textViewNoMovies);
         progressBarLoading = findViewById(R.id.progressBarLoading);
+        popularIconBlue = findViewById(R.id.popularIconBlue);
+        popularIconWhite = findViewById(R.id.popularIconWhite);
+        topRatedIconBlue = findViewById(R.id.topRatedIconBlue);
+        topRatedIconWhite = findViewById(R.id.topRatedIconWhite);
         toWatchIconBlue = findViewById(R.id.toWatchIconBlue);
         toWatchIconWhite = findViewById(R.id.toWatchIconWhite);
         watchedIconBlue = findViewById(R.id.watchedIconBlue);
@@ -300,9 +308,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     /* Click on "popular" or "top rated" button */
     private void clickPopularOrTopRatedButtons(int buttonId) {
         if (buttonId == R.id.buttonPopular) {
+            Toast.makeText(this, getString(R.string.most_popular), Toast.LENGTH_SHORT).show();
             sortMethod = NetworkUtils.POPULARITY;
             setButtonsStyle(R.id.buttonPopular);
         } else {
+            Toast.makeText(this, getString(R.string.top_rated), Toast.LENGTH_SHORT).show();
             sortMethod = NetworkUtils.TOP_RATED;
             setButtonsStyle(R.id.buttonTopRated);
         }
@@ -370,84 +380,117 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     /* Set style of buttons */
     private void setButtonsStyle(int buttonId) {
-        int blue = getResources().getColor(R.color.blue_color);
-        int white = getResources().getColor(R.color.white_color);
         switch (buttonId) {
             case R.id.buttonPopular:
-                buttonPopular.setTextColor(white);
-                buttonPopular.setBackgroundColor(blue);
-                buttonTopRated.setTextColor(blue);
-                buttonTopRated.setBackgroundColor(white);
-                buttonToWatch.setBackgroundColor(white);
-                buttonWatched.setBackgroundColor(white);
-                buttonFavourite.setBackgroundColor(white);
-                toWatchIconBlue.setVisibility(View.VISIBLE);
-                toWatchIconWhite.setVisibility(View.GONE);
-                watchedIconBlue.setVisibility(View.VISIBLE);
-                watchedIconWhite.setVisibility(View.GONE);
-                favouriteIconBlue.setVisibility(View.VISIBLE);
-                favouriteIconWhite.setVisibility(View.GONE);
+                setButtonPopular(true);
+                setButtonTopRated(false);
+                setButtonToWatch(false);
+                setButtonWatched(false);
+                setButtonFavourite(false);
                 break;
             case R.id.buttonTopRated:
-                buttonPopular.setTextColor(blue);
-                buttonPopular.setBackgroundColor(white);
-                buttonTopRated.setTextColor(white);
-                buttonTopRated.setBackgroundColor(blue);
-                buttonToWatch.setBackgroundColor(white);
-                buttonWatched.setBackgroundColor(white);
-                buttonFavourite.setBackgroundColor(white);
-                toWatchIconBlue.setVisibility(View.VISIBLE);
-                toWatchIconWhite.setVisibility(View.GONE);
-                watchedIconBlue.setVisibility(View.VISIBLE);
-                watchedIconWhite.setVisibility(View.GONE);
-                favouriteIconBlue.setVisibility(View.VISIBLE);
-                favouriteIconWhite.setVisibility(View.GONE);
+                setButtonPopular(false);
+                setButtonTopRated(true);
+                setButtonToWatch(false);
+                setButtonWatched(false);
+                setButtonFavourite(false);
                 break;
             case R.id.buttonToWatch:
-                buttonPopular.setTextColor(blue);
-                buttonPopular.setBackgroundColor(white);
-                buttonTopRated.setTextColor(blue);
-                buttonTopRated.setBackgroundColor(white);
-                buttonToWatch.setBackgroundColor(blue);
-                buttonWatched.setBackgroundColor(white);
-                buttonFavourite.setBackgroundColor(white);
-                toWatchIconBlue.setVisibility(View.GONE);
-                toWatchIconWhite.setVisibility(View.VISIBLE);
-                watchedIconBlue.setVisibility(View.VISIBLE);
-                watchedIconWhite.setVisibility(View.GONE);
-                favouriteIconBlue.setVisibility(View.VISIBLE);
-                favouriteIconWhite.setVisibility(View.GONE);
+                setButtonPopular(false);
+                setButtonTopRated(false);
+                setButtonToWatch(true);
+                setButtonWatched(false);
+                setButtonFavourite(false);
                 break;
             case R.id.buttonWatched:
-                buttonPopular.setTextColor(blue);
-                buttonPopular.setBackgroundColor(white);
-                buttonTopRated.setTextColor(blue);
-                buttonTopRated.setBackgroundColor(white);
-                buttonToWatch.setBackgroundColor(white);
-                buttonWatched.setBackgroundColor(blue);
-                buttonFavourite.setBackgroundColor(white);
-                toWatchIconBlue.setVisibility(View.VISIBLE);
-                toWatchIconWhite.setVisibility(View.GONE);
-                watchedIconBlue.setVisibility(View.GONE);
-                watchedIconWhite.setVisibility(View.VISIBLE);
-                favouriteIconBlue.setVisibility(View.VISIBLE);
-                favouriteIconWhite.setVisibility(View.GONE);
+                setButtonPopular(false);
+                setButtonTopRated(false);
+                setButtonToWatch(false);
+                setButtonWatched(true);
+                setButtonFavourite(false);
                 break;
             case R.id.buttonFavourite:
-                buttonPopular.setTextColor(blue);
-                buttonPopular.setBackgroundColor(white);
-                buttonTopRated.setTextColor(blue);
-                buttonTopRated.setBackgroundColor(white);
-                buttonToWatch.setBackgroundColor(white);
-                buttonWatched.setBackgroundColor(white);
-                buttonFavourite.setBackgroundColor(blue);
-                toWatchIconBlue.setVisibility(View.VISIBLE);
-                toWatchIconWhite.setVisibility(View.GONE);
-                watchedIconBlue.setVisibility(View.VISIBLE);
-                watchedIconWhite.setVisibility(View.GONE);
-                favouriteIconBlue.setVisibility(View.GONE);
-                favouriteIconWhite.setVisibility(View.VISIBLE);
+                setButtonPopular(false);
+                setButtonTopRated(false);
+                setButtonToWatch(false);
+                setButtonWatched(false);
+                setButtonFavourite(true);
                 break;
+        }
+    }
+
+    private void setButtonPopular(boolean isActive) {
+        int blue = getResources().getColor(R.color.blue_color);
+        int white = getResources().getColor(R.color.white_color);
+
+        if (isActive) {
+            buttonPopular.setBackgroundColor(blue);
+            popularIconBlue.setVisibility(View.GONE);
+            popularIconWhite.setVisibility(View.VISIBLE);
+        } else {
+            buttonPopular.setBackgroundColor(white);
+            popularIconBlue.setVisibility(View.VISIBLE);
+            popularIconWhite.setVisibility(View.GONE);
+        }
+    }
+
+    private void setButtonTopRated(boolean isActive) {
+        int blue = getResources().getColor(R.color.blue_color);
+        int white = getResources().getColor(R.color.white_color);
+
+        if (isActive) {
+            buttonTopRated.setBackgroundColor(blue);
+            topRatedIconBlue.setVisibility(View.GONE);
+            topRatedIconWhite.setVisibility(View.VISIBLE);
+        } else {
+            buttonTopRated.setBackgroundColor(white);
+            topRatedIconBlue.setVisibility(View.VISIBLE);
+            topRatedIconWhite.setVisibility(View.GONE);
+        }
+    }
+
+    private void setButtonToWatch(boolean isActive) {
+        int blue = getResources().getColor(R.color.blue_color);
+        int white = getResources().getColor(R.color.white_color);
+
+        if (isActive) {
+            buttonToWatch.setBackgroundColor(blue);
+            toWatchIconBlue.setVisibility(View.GONE);
+            toWatchIconWhite.setVisibility(View.VISIBLE);
+        } else {
+            buttonToWatch.setBackgroundColor(white);
+            toWatchIconBlue.setVisibility(View.VISIBLE);
+            toWatchIconWhite.setVisibility(View.GONE);
+        }
+    }
+
+    private void setButtonWatched(boolean isActive) {
+        int blue = getResources().getColor(R.color.blue_color);
+        int white = getResources().getColor(R.color.white_color);
+
+        if (isActive) {
+            buttonWatched.setBackgroundColor(blue);
+            watchedIconBlue.setVisibility(View.GONE);
+            watchedIconWhite.setVisibility(View.VISIBLE);
+        } else {
+            buttonWatched.setBackgroundColor(white);
+            watchedIconBlue.setVisibility(View.VISIBLE);
+            watchedIconWhite.setVisibility(View.GONE);
+        }
+    }
+
+    private void setButtonFavourite(boolean isActive) {
+        int blue = getResources().getColor(R.color.blue_color);
+        int white = getResources().getColor(R.color.white_color);
+
+        if (isActive) {
+            buttonFavourite.setBackgroundColor(blue);
+            favouriteIconBlue.setVisibility(View.GONE);
+            favouriteIconWhite.setVisibility(View.VISIBLE);
+        } else {
+            buttonFavourite.setBackgroundColor(white);
+            favouriteIconBlue.setVisibility(View.VISIBLE);
+            favouriteIconWhite.setVisibility(View.GONE);
         }
     }
 

@@ -46,7 +46,7 @@
             android:contentDescription="@string/to_watch"
             android:onClick="onClickChangeToWatch"
             android:layout_weight="1"
-            app:srcCompat="@drawable/play_grey" />
+            app:srcCompat="@drawable/ic_play_arrow_gray_24dp" />
 
         <ImageView
             style="@style/TopButtonsDetail"
@@ -54,7 +54,7 @@
             android:contentDescription="@string/watched"
             android:onClick="onClickChangeWatched"
             android:layout_weight="1"
-            app:srcCompat="@drawable/check_grey" />
+            app:srcCompat="@drawable/ic_done_gray_24dp" />
 
         <ImageView
             style="@style/TopButtonsDetail"
@@ -62,7 +62,7 @@
             android:contentDescription="@string/favourite"
             android:onClick="onClickChangeFavourite"
             android:layout_weight="1"
-            app:srcCompat="@drawable/star_grey" />
+            app:srcCompat="@drawable/ic_favorite_gray_24dp" />
 
     </LinearLayout>
 

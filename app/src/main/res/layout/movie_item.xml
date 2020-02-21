@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
         android:id="@+id/imageViewSmallPoster"
@@ -20,8 +21,8 @@
         android:layout_width="@dimen/size_of_rating_star"
         android:layout_height="@dimen/size_of_rating_star"
         android:contentDescription="@string/rating"
-        android:layout_margin="@dimen/margin_basic"
-        android:src="@drawable/star_yellow"
+        android:layout_margin="@dimen/margin_little"
+        android:src="@drawable/ic_star_yellow_24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,5 +35,6 @@
         app:layout_constraintEnd_toEndOf="@id/imageViewStar"
         app:layout_constraintTop_toTopOf="@id/imageViewStar"
         app:layout_constraintBottom_toBottomOf="@id/imageViewStar"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        tools:text="8.8"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

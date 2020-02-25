@@ -113,7 +113,7 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         /* Set values of views from movie data */
-        Picasso.get().load(movie.getBigPosterPath()).placeholder(R.drawable.cadre).into(imageViewBigPoster);
+        Picasso.get().load(movie.getBigPosterPath()).placeholder(R.drawable.ic_movie_blue_24dp).into(imageViewBigPoster);
         textViewTitle.setText(movie.getTitle());
         textViewOriginalTitle.setText(movie.getOriginalTitle());
         textViewRating.setText(Double.toString(movie.getVoteAverage()));

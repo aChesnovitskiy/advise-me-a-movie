@@ -89,7 +89,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         }
 
         Movie movie = movies.get(position);
-        Picasso.get().load(movie.getPosterPath()).into(holder.imageViewSmallPoster);
+        Picasso.get().load(movie.getPosterPath()).resize(200, 0).into(holder.imageViewSmallPoster);
         holder.textViewRatingOnTheStar.setText(String.valueOf(movie.getVoteAverage()));
     }
 
